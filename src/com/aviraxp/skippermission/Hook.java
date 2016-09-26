@@ -25,7 +25,7 @@ public class Hook implements IXposedHookZygoteInit, IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(final LoadPackageParam lpparam) throws Throwable {
-        if (lpparam.packageName.equals("com.android.packageinstaller") || lpparam.packageName.equals("com.google.android.packageinstaller") || lpparam.packageName.equals("com.mokee.packageinstaller")) {
+        if (lpparam.packageName.equals("com.android.packageinstaller") || lpparam.packageName.equals("com.google.android.packageinstaller") || lpparam.packageName.equals("com.mokee.packageinstaller") || lpparam.packageName.equals("com.samsung.android.packageinstaller")) {
             XposedHelpers.findAndHookMethod("com.android.packageinstaller.permission.ui.GrantPermissionsActivity",
                     lpparam.classLoader, "onCreate", grantPermissionsBackButtonHook);
         }
