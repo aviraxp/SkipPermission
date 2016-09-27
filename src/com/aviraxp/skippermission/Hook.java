@@ -17,7 +17,6 @@ public class Hook implements IXposedHookZygoteInit, IXposedHookLoadPackage {
             @Override
             protected void afterHookedMethod(MethodHookParam param)
                     throws Throwable {
-                //setResultAndFinish()
                 XposedHelpers.callMethod(param.thisObject, "setResultAndFinish");
             }
         };
